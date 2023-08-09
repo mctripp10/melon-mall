@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width" />
     <meta name="Author" content="Michael Tripp">
     <meta name="Description" content="Picture gallery for melons.">
     <title>Melon Mall</title>
   </head>
   <body>
-    <header>
-        <h1>Welcome to.. the Melon Mall!</h1>
-    </header>
+    <div class="header">
+      <h1>Melon Mall</h1>
+    </div>
 
-    <nav>
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </nav>
-
+    <div class="topnav">
+        <a href="home.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+    </div>
     <main>
-        <section>
-          <img src="images\melon2.jpg" alt="Watermelon">
-          <img src="images\melon3.jpg" alt="Watermelon">
-        </section>
-        <section>
-          <img src="images\melon4.jpg" alt="Canteloupe">
-          <img src="images\melon5.jpg" alt="Canteloupe">
-        </section>
-        <section>
-          <img src="images\melon6.jpg" alt="Honeydew">
-          <img src="images\melon7.jpg" alt="Honeydew">
-        </section>
-        <section>
-          <img src="images\melon1.jpg" alt="Watermelon">
-          <img src="images\melon1.webp" alt="Watermelon">
-        </section>
+      <div class="row">
+        <div class="leftcolumn">
+          <div class="contentleft">
+            <h2>Gallery</h2>
+
+            <section>
+              <img src="images\melon2.jpg" alt="Watermelon">
+              <img src="images\melon3.jpg" alt="Watermelon">
+            </section>
+            <section>
+              <img src="images\melon4.jpg" alt="Canteloupe">
+              <img src="images\melon5.jpg" alt="Canteloupe">
+            </section>
+            <section>
+              <img src="images\melon6.jpg" alt="Honeydew">
+              <img src="images\melon7.jpg" alt="Honeydew">
+            </section>
+            <section>
+              <img src="images\melon1.jpg" alt="Watermelon">
+              <img src="images\melon1.webp" alt="Watermelon">
+            </section>
+          </div>
+        </div>
+      </div>
     </main>
 
-    <footer>
-      <p>©Copyright 2050 by melons. All rights to Melon Lord.</p>
-    </footer>
+    <div class="footer">
+      <p>©Copyright 2050 by melons. All rights to Melon Lord.</p>    
+    </div>
   </body>
 </html>

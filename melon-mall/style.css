@@ -32,34 +32,85 @@
 .leftcolumn {   
     float: left;
     width: 75%;
-}
-
-.column {   
-    float: left;
-    width: 33.33%;
+    margin-top: 20px;
 }
   
 .rightcolumn {
     float: right;
-    width: 352px;
-    height: 501px;
-    background-color: #f1f1f1;
+    width: 25%;
+    margin-top: 20px;
 }
 
 .footer {
-    background-color: #F1F1F1;
+    background-color: #3A7544;
     text-align: center;
     padding: 5px;
     margin-top: 5px;
 }
 
-.content {
-    background-color: #F1F1F1;
-    padding: 10px;
+.contentleft {
+    background-color: #3A7544;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 10px;
 }
 
+.contentright {
+    background-color: #3A7544;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-left: 10px;
+}
+
+.content {
+    background-color: #3A7544;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-left: 10px;
+}
+
+/*e7aabc */
+
 body {
-    font-family: Arial;
+    font-family: 'Verdana';
+    font-style: 'italic';
     padding: 10px;
-    background-color:#234629;
+    background-color:#3A7544;
+    color: white;
+}
+
+a {
+    font-family: Arial;
+}
+
+h1 {
+    font-family: 'lucida handwriting';
+}
+
+h2 {
+    font-family: 'lucida handwriting';
+}
+
+h3.italic {
+    font-family: 'Verdana';
+    font-style: 'italic';
+}
+
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
 }
