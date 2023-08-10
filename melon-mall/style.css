@@ -22,7 +22,6 @@
     background-color: #3A7544;
 }
 
-/* Clear floats after the columns */
 .row::after {
     content: "";
     display: table;
@@ -74,9 +73,8 @@
     margin-left: 10px;
 }
 
-/*e7aabc */
-
 body {
+    font-size: 95%;
     font-family: 'Verdana';
     font-style: 'italic';
     padding: 10px;
@@ -86,6 +84,7 @@ body {
 
 a {
     font-family: Arial;
+    color: white;
 }
 
 h1 {
@@ -96,9 +95,10 @@ h2 {
     font-family: 'lucida handwriting';
 }
 
-h3.italic {
-    font-family: 'Verdana';
-    font-style: 'italic';
+h3 {
+    font-size:120%;
+    font-family: 'Trebuchet MS';
+    font-style: 'italic' !important;
 }
 
 @media screen and (max-width: 800px) {
