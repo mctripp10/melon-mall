@@ -76,7 +76,6 @@
 body {
     font-size: 95%;
     font-family: 'Verdana';
-    font-style: 'italic';
     padding: 10px;
     background-color:#3A7544;
     color: white;
@@ -98,7 +97,7 @@ h2 {
 h3 {
     font-size:120%;
     font-family: 'Trebuchet MS';
-    font-style: 'italic' !important;
+    font-style: italic;
 }
 
 @media screen and (max-width: 800px) {
