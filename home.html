@@ -6,17 +6,23 @@
     <meta name="Author" content="Michael Tripp">
     <meta name="Description" content="Home page for melon mall">
     <title>Melon Mall</title>
+    <script>
+        function doIt() {
+            document.getElementById("test").innerHTML = "Melooooooon Mall!!!";
+        }
+    </script>
 </head>
 
 <body>
     <div class="header">
-        <h1>Melon Mall</h1>
+        <h1 id="test">Melon Mall</h1>
     </div>
 
     <div class="topnav">
-        <a href="home.html">Home</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about.html">About</a>
+        <a class="image" onclick="doIt()"><img src="images\watermelon-slice.png" alt="watermelon slice"  style="height:1.3em;"></a>
+        <a class="regular" href="home.html">Home</a>
+        <a class="regular" href="gallery.html">Gallery</a>
+        <a class="regular" href="about.html">About</a>
     </div>
 
     <main>

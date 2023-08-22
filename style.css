@@ -9,12 +9,21 @@
     background-color: #5AB669;
 }
 
-.topnav a {
+.topnav a.regular {
     float: left;
     display: block;
     color: black;
     text-align: center;
     padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a.image {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10.8px 14px;
     text-decoration: none;
 }
 
