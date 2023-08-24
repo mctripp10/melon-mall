@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="Author" content="Michael Tripp">
+    <meta name="Description" content="Home page for melon mall">
+    <title>Melon Mall</title>
+    <script>
+        function ani() {
+            document.getElementById("title").innerHTML = "Melooooooon Mall!!!";
+            document.getElementById('spinner').className = 'center';
+            document.getElementById('spinner').className = 'spin';
+        }
+    </script>
+</head>
+
+<body>
+    
+    <div class="header">
+        <h1 id="title">Melon Mall</h1>
+    </div>
+
+    <div class="topnav">
+        <a class="image" href="spinner.html"><img src="images\watermelon-slice.png" alt="watermelon slice"  style="height:1.3em;"></a>
+        <a class="regular" href="home.html">Home</a>
+        <a class="regular" href="gallery.html">Gallery</a>
+        <a class="regular" href="about.html">About</a>
+    </div>
+
+    <main>
+       <img id="spinner" onclick="ani()" class="center" src="images\watermelon-slice.png" alt="watermelon spinner" style="height:10em;">
+    </main>
+
+    <div class="footer">
+        <p>©Copyright 2050 by melons. All rights to Melon Lord.</p>    
+    </div>
+  </body>
+</html>
