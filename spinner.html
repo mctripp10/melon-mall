@@ -7,16 +7,65 @@
     <meta name="Description" content="Home page for melon mall">
     <title>Melon Mall</title>
     <script>
-        function ani() {
-            document.getElementById("title").innerHTML = "Melooooooon Mall!!!";
-            document.getElementById('spinner').className = 'center';
+        let aniRunning = false;
+        let titleRunning = false;
+
+        function spinAni() {
+            //document.getElementById('title').innerHTML = "Melooooooon Mall!!!";
             document.getElementById('spinner').className = 'spin';
+        }
+
+        function resetAni() {
+            document.getElementById('spinner').className = 'center';
+            document.getElementById('fortunetext').className = 'centertext';
+        }
+
+        function melonFortune() {
+            if(!aniRunning) {
+                aniRunning = true;
+
+                // Immediately erase fortune text if there is any from previous fortune
+                document.getElementById("fortunetext").innerHTML = "<br>";
+
+                // Choose random fortune among an array of fortunes
+                let fortuneNum = Math.floor(Math.random() * 10);
+                let fortunes = [
+                    "You are instantly hydrated! I wonder how long it'll last..",
+                    "Sending 372 watermelons to your front door.. ETA: 1.5 hours.",
+                    "You spun it too fast! Now the watermelon juice is EVERYWHERE :(",
+                    "You've been cursed (or blessed?)! Any watermelon seed you ingest for the rest of your life will immediately begin growing into a watermelon in your stomach!",
+                    "Yummmmmmmmmmmm",
+                    "Your new profession is now watermelon farmer (no takes backseys).",
+                    "Your head is now a watermelon.",
+                    "You are now 95% water, instead of the usual 70% (good luck).",
+                    "You are hydrated for life!",
+                    "You suddenly feel.. durable. Your skin is now made of watermelon rind!",
+                ];
+
+                let fortune = fortunes[fortuneNum];
+                let title = document.getElementById('title').innerHTML;
+
+                // Begin spin animation and add an "o" to the title
+                spinAni()
+                document.getElementById('title').innerHTML = title.slice(0, 3) + "o" + title.slice(3);
+
+                // Fade in fortune text after 2s
+                setTimeout(() => {
+                    document.getElementById("fortunetext").className = "fade-in-text"
+                    document.getElementById("fortunetext").innerHTML = fortune
+                }, 2000);
+
+                // Reset both the spinner and fortune text's styles after 3s to prepare for next spin
+                setTimeout(() => { 
+                    resetAni()
+                    aniRunning = false;
+                }, 3000);
+            }
         }
     </script>
 </head>
 
 <body>
-    
     <div class="header">
         <h1 id="title">Melon Mall</h1>
     </div>
@@ -28,11 +77,16 @@
         <a class="regular" href="about.html">About</a>
     </div>
 
+    
     <main>
-       <img id="spinner" onclick="ani()" class="center" src="images\watermelon-slice.png" alt="watermelon spinner" style="height:10em;">
+        <body>
+            <img id="spinner" class="center" onclick="melonFortune()" src="images\watermelon-slice.png" alt="watermelon spinner" style="height:10em;">
+            <h4 class="centertext">Spin me... if you dare....</h4>
+            <p id="fortunetext" class="centertext"><br></p>
+        </body>
     </main>
 
-    <div class="footer">
+    <div class="footerspinner">
         <p>©Copyright 2050 by melons. All rights to Melon Lord.</p>    
     </div>
   </body>
