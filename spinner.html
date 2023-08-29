@@ -11,21 +11,24 @@
         let titleRunning = false;
 
         function spinAni() {
-            //document.getElementById('title').innerHTML = "Melooooooon Mall!!!";
             document.getElementById('spinner').className = 'spin';
         }
 
         function resetAni() {
             document.getElementById('spinner').className = 'center';
-            document.getElementById('fortunetext').className = 'centertext';
         }
 
         function melonFortune() {
             if(!aniRunning) {
                 aniRunning = true;
 
-                // Immediately erase fortune text if there is any from previous fortune
-                document.getElementById("fortunetext").innerHTML = "<br>";
+                // Immediately fade out fortune text if there is any from previous fortune
+                document.getElementById('fortunetext').className = 'fade-out-text';
+
+                // Erase text after fade is complete
+                setTimeout(() => {
+                    document.getElementById("fortunetext").innerHTML = "<br>"
+                }, 900);
 
                 // Choose random fortune among an array of fortunes
                 let fortuneNum = Math.floor(Math.random() * 10);

@@ -198,3 +198,17 @@ h3 {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }  
+
+.fade-out-text {
+    text-align: center;
+    animation: fadeout 1s;
+    -webkit-animation: fadeout 1s;
+    -moz-animation: fadeout 1s;
+    -o-animation: fadeout 1s;
+    -ms-animation: fadeout 1s;
+}
+
+@keyframes fadeout {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}  
