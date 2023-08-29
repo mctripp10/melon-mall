@@ -9,12 +9,21 @@
     background-color: #5AB669;
 }
 
-.topnav a {
+.topnav a.regular {
     float: left;
     display: block;
     color: black;
     text-align: center;
     padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a.image {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10.8px 14px;
     text-decoration: none;
 }
 
@@ -45,6 +54,13 @@
     text-align: center;
     padding: 5px;
     margin-top: 5px;
+}
+
+.footerspinner {
+    background-color: #3A7544;
+    text-align: center;
+    padding: 5px;
+    margin-top: 200px;
 }
 
 .contentleft {
@@ -79,6 +95,18 @@ body {
     padding: 10px;
     background-color:#3A7544;
     color: white;
+    
+    background-image: url('w3css.gif');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
 }
 
 a {
@@ -104,6 +132,10 @@ h3 {
     font-style: italic;
 }
 
+.centertext {
+    text-align: center;
+}
+
 @media screen and (max-width: 800px) {
     .leftcolumn, .rightcolumn {
         width: 100%;
@@ -117,3 +149,52 @@ h3 {
         width: 100%;
     }
 }
+
+.transform {
+    -webkit-transition: all 2s ease;  
+    -moz-transition: all 2s ease;  
+    -o-transition: all 2s ease;  
+    -ms-transition: all 2s ease;  
+    transition: all 2s ease;
+}
+
+.transform-active {
+    height: 200px;
+    width: 200px;
+}
+
+.spin {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    animation-name: cssAnimation;
+    animation-duration:3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes cssAnimation {
+    from {
+      -webkit-transform: rotate(0deg) scale(1) skew(0deg) translateX(0px) translateY(0px);
+    }
+    to {
+      -webkit-transform: rotate(360deg) scale(1) skew(0deg) translateX(0px) translateY(0px);
+    }
+}
+
+.fade-in-text {
+    text-align: center;
+    animation: fadeIn 1s;
+    -webkit-animation: fadeIn 1s;
+    -moz-animation: fadeIn 1s;
+    -o-animation: fadeIn 1s;
+    -ms-animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}  
