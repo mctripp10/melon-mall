@@ -31,7 +31,6 @@
                 }, 900);
 
                 // Choose random fortune among an array of fortunes
-                let fortuneNum = Math.floor(Math.random() * 10);
                 let fortunes = [
                     "You are instantly hydrated! I wonder how long it'll last..",
                     "Sending 372 watermelons to your front door.. ETA: 1.5 hours.",
@@ -46,15 +45,18 @@
                     "Melon melon melon melon melon melon",
                     "Your biceps are now watermelons! Epic melon rizz.",
                     "It's raining melon seeds!",
-                    "Ayo- can I be the water to your melons :)",
+                    "Ayo- can I be the water to your melon :)",
                     "Your pupils are now watermelon seeds! HAHAHAHAHHAA",
                     "It's time to pay the seed tax to the Melon Lord! Pay up.",
                     "You have transformed into a watermelon! Now sacrifice yourself to the Melon Lord!! MUAHAHAHAHA",
                     "All hail the Melon Lord.",
                     "You suddenly feel.. squishy. Your body has turned to melon MUSH.. you only have a few hours to live.",
                     "You suddenly feel.. crunchy. Watch out! Someone has bitten into your melon skin! Minus three hours to live.",
-                    "You find the perfect watermelon on the ground.. you take a bite and get that good CRUNCH. Your life is now complete."
+                    "You find the perfect watermelon on the ground.. you take a bite and get that good CRUNCH. Your life is now complete.",
+                    "Your time is up.. the Melon Lord is calling.",
+                    "Oh no.. you've eaten TOO MUCH MELON!! Your gums are becoming melon mush, your teeth are melon seeds.. and your lips are melon rind D: Contact Melon Lord immediately."
                 ];
+                let fortuneNum = Math.floor(Math.random() * fortunes.length);
 
                 let fortune = fortunes[fortuneNum];
                 let title = document.getElementById('title').innerHTML;
