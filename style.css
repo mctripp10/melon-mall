@@ -2,11 +2,15 @@
     background-color: #D23B68;
     text-align: center;
     padding: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .topnav {
     overflow: hidden;
     background-color: #5AB669;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .topnav a.regular {
@@ -102,6 +106,33 @@ body {
     background-position: center top;
 }
 
+button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #D23B68;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px #ffffff;
+}
+
+button:hover {background-color: #982447}
+
+button:active {
+  background-color: #982447;
+  box-shadow: 0 2px #8f8f8f;
+  transform: translateY(4px);
+}
+
+.rounded {
+    border-radius: 15px;
+}
+
 .center {
     display: block;
     margin-left: auto;
@@ -126,14 +157,39 @@ h2 {
     font-family: 'lucida handwriting';
 }
 
+h2:after {
+    content:' ';
+    display:block;
+    border:2px solid #5AB669;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+    -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+    -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
 h3 {
     font-size:120%;
     font-family: 'Trebuchet MS';
     font-style: italic;
 }
 
+img {
+    border-radius: 10px;
+}
+
+img:hover {
+    opacity: 85%;
+}
+
 .centertext {
     text-align: center;
+}
+
+img.navimg {
+    opacity: 100%;
+    border-radius: 0px;
 }
 
 @media screen and (max-width: 800px) {
@@ -178,10 +234,10 @@ h3 {
 
 @keyframes cssAnimation {
     from {
-      -webkit-transform: rotate(0deg) scale(1) skew(0deg) translateX(0px) translateY(0px);
+        -webkit-transform: rotate(0deg) scale(1) skew(0deg) translateX(0px) translateY(0px);
     }
     to {
-      -webkit-transform: rotate(360deg) scale(1) skew(0deg) translateX(0px) translateY(0px);
+        -webkit-transform: rotate(360deg) scale(1) skew(0deg) translateX(0px) translateY(0px);
     }
 }
 

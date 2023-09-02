@@ -6,6 +6,21 @@
     <meta name="Author" content="Michael Tripp">
     <meta name="Description" content="Picture gallery for melons.">
     <title>Melon Mall</title>
+    <script>
+        let playingMelonLordSound = false;
+        let melonLordSound = new Audio("audio/iammelonlord.mp3")
+
+         function playMelonLordSound() {
+            if(!playingMelonLordSound) {
+                melonLordSound.play();
+                playingMelonLordSound = true;
+
+                setTimeout(() => {
+                    playingMelonLordSound = false;
+                }, 5000);
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="header">
@@ -13,12 +28,12 @@
     </div>
 
     <div class="topnav">
-        <a class="image" href="spinner.html"><img src="images\watermelon-slice.png" alt="watermelon slice"  style="height:1.3em;"></a>
+        <a class="image" href="spinner.html"><img class="navimg" src="images\watermelon-slice.png" alt="watermelon slice"  style="height:1.3em;"></a>
         <a class="regular" href="home.html">Home</a>
-        <a class="regular" href="gallery.html">Gallery</a>
         <a class="regular" href="about.html">About</a>
+        <a class="regular" href="melons.html">Melons</a>
     </div>
-
+    
     <main>
         <div class="row">
             <div class="leftcolumn">
@@ -28,7 +43,7 @@
                     <p>Welcome to the Melon Mall! This website is dedicated to all things melon,
                     brought to you by your generous.. MELON LORD!!</p>
 
-                    <img src="images\melonlord.gif" alt="I am not Michael, I am MELON LORD!!! MWAHAHAHAHA"  style="height:20em;">
+                    <img onclick="playMelonLordSound()" src="images\melonlord.gif" alt="I am not Michael, I am MELON LORD!!! MWAHAHAHAHA"  style="height:20em;">
                     <p>Feel free to explore all this site has to offer! Seed you around ;^)</p>
                 </div>
             </div>

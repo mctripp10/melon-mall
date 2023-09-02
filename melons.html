@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="Author" content="Michael Tripp">
+    <meta name="Description" content="Picture gallery for melons.">
+    <title>Melon Mall</title>
+    <script>
+
+        /*
+         *  Variables
+         */ 
+        let melonsEaten = 0;
+        let melonId;
+        let eatenText;
+        let eating = false;
+
+        let eatenTextOptions = [
+            "Yummmmmm. Delicious melon :)",
+            "Now THAT was CRUNCHY!",
+            "Mmmmmmm bring me more!",
+            "I'm so full...",
+            "Delcious.. I feel so hydrated!!",
+            "Oh no you ate them all :(",
+            "Aw man they are all gone :(",
+            "Just can't get enough!"
+        ];
+
+        let munchSounds = [
+            new Audio("audio/crunch1.mp3"),
+            new Audio("audio/crunch2.mp3"),
+            new Audio("audio/crunch3.mp3"),
+            new Audio("audio/slurp.mp3"),
+            new Audio("audio/smack.mp3")
+        ];
+
+        /*
+         *  Functions
+         */ 
+
+         // "Regenerates" all the melon images on the page by unhiding them
+        function regenerate() {
+            // Erase eaten text and reset melons eaten
+            document.getElementById("eaten-text").innerHTML = "";
+            melonsEaten = 0;
+
+            for(let i = 1; i <= 8; i++) {
+                melonId = `melon${i}`;
+                document.getElementById(melonId).hidden = false;
+            }
+        }
+
+        function playMunchSound() {
+                let munchSound = munchSounds[Math.floor(Math.random() * munchSounds.length)];      // Choose random munch sound
+                munchSound.play();
+                eating = true;
+
+                setTimeout(() => {
+                    eating = false;
+                }, 750);
+        }
+
+        // "Eats a melon" by hiding the melon image the user clicks. Also adds text + regenerate button upon eating all melons
+        function eat(clicked_id) {
+            if(!eating) {
+                playMunchSound();
+                document.getElementById(clicked_id).hidden = true;
+                melonsEaten += 1;
+                eatenText = eatenTextOptions[Math.floor(Math.random() * eatenTextOptions.length)]
+
+                if (melonsEaten === 8) {
+                    document.getElementById("eaten-text").innerHTML = `${eatenText} <br><br> <button onclick="regenerate()">Regenerate Melons</button>`;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="title" class="header">
+        <h1>Melon Mall</h1>
+    </div>
+
+    <div class="topnav">
+        <a class="image" href="spinner.html"><img class="navimg" src="images\watermelon-slice.png" alt="watermelon slice"  style="height:1.3em;"></a>
+        <a class="regular" href="home.html">Home</a>
+        <a class="regular" href="about.html">About</a>
+        <a class="regular" href="melons.html">Melons</a>
+    </div>
+
+    <main>
+        <div class="row">
+            <div class="leftcolumn">
+                <div class="contentleft">
+                    <h2>Eat Me!</h2>
+                    <p id="eaten-text"></p>
+                    <section>
+                        <img id="melon2" onclick="eat(this.id)" src="images\melon2.jpg" alt="Watermelon" style="height:12em;">
+                        <img id="melon3" onclick="eat(this.id)" src="images\melon3.jpg" alt="Watermelon" style="height:12em;">
+                    </section>
+                    <section>
+                        <img id="melon4" onclick="eat(this.id)" src="images\melon4.jpg" alt="Canteloupe" style="height:12em;">
+                        <img id="melon5" onclick="eat(this.id)" src="images\melon5.jpg" alt="Canteloupe" style="height:12em;">
+                    </section>
+                    <section>
+                        <img id="melon6" onclick="eat(this.id)" src="images\melon6.jpg" alt="Honeydew" style="height:12em;">
+                        <img id="melon7" onclick="eat(this.id)"src="images\melon7.jpg" alt="Honeydew" style="height:12em;">
+                    </section>
+                    <section>
+                        <img id="melon8" onclick="eat(this.id)" src="images\melon1.jpg" alt="Watermelon" style="height:12em;">
+                        <img id="melon1" onclick="eat(this.id)" src="images\melon1.webp" alt="Watermelon" style="height:12em;">
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer">
+        <p>©Copyright 2050 by melons. All rights to Melon Lord.</p>    
+    </div>
+</body>
+</html>
