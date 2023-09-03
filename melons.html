@@ -35,20 +35,39 @@
             new Audio("audio/smack.mp3")
         ];
 
+        let regenSound = new Audio("audio/regenerate.mp3");
+
         /*
          *  Functions
          */ 
 
+        // Plays a button click sound (#2)
+        function playClick2() {
+            new Audio("audio/buttonclick1.mp3").play();
+        }
+
          // "Regenerates" all the melon images on the page by unhiding them
         function regenerate() {
+            // Play sfx
+            playClick2();
+            playRegenSound();
+
             // Erase eaten text and reset melons eaten
             document.getElementById("eaten-text").innerHTML = "";
             melonsEaten = 0;
 
+            // Unhide all melon images and fade them back in
             for(let i = 1; i <= 8; i++) {
                 melonId = `melon${i}`;
                 document.getElementById(melonId).hidden = false;
+                document.getElementById(melonId).className = "fade-in-img";
             }
+
+
+        }
+
+        function playRegenSound() {
+            regenSound.play();
         }
 
         function playMunchSound() {

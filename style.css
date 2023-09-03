@@ -241,6 +241,14 @@ img.navimg {
     }
 }
 
+.fade-in-img {
+    animation: fadeIn 2.75s;
+    -webkit-animation: fadeIn 2.75s;
+    -moz-animation: fadeIn 2.75s;
+    -o-animation: fadeIn 2.75s;
+    -ms-animation: fadeIn 2.75s;
+}
+
 .fade-in-text {
     text-align: center;
     animation: fadeIn 1s;

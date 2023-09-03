@@ -10,6 +10,40 @@
         let aniRunning = false;
         let titleRunning = false;
 
+        let goodFortuneSound = new Audio("audio/cheer.mp3");
+        let badFortuneSound = new Audio("audio/awww.mp3");
+        let anticipationSound = new Audio("audio/woooaaa.mp3");
+
+        let fortunes = [
+            [
+                "You are instantly hydrated! I wonder how long it'll last..",
+                "Sending 372 watermelons to your front door.. ETA: 1.5 hours.",
+                "Yummmmmmmmmmmm",
+                "Your new profession is now watermelon farmer :D",
+                "Your head is now a watermelon.",
+                "You are hydrated for life!",
+                "You suddenly feel.. durable. Your skin is now made of watermelon rind!",
+                "Melon melon melon melon melon melon",
+                "Your biceps are now watermelons! Epic melon rizz.",
+                "It's raining melon seeds!",
+                "Ayo- can I be the water to your melon? :)",
+                "You have transformed into a watermelon! Now sacrifice yourself to the Melon Lord!! MUAHAHAHAHA",
+                "All hail the Melon Lord.",
+                "You find the perfect watermelon on the ground.. you take a bite and get that good CRUNCH. Your life is now complete.",
+                "Your time is up.. the Melon Lord is calling.",
+            ],
+            [
+                "You spun it too fast! Now the watermelon juice is EVERYWHERE :(",
+                "You've been cursed (or blessed?)! Any watermelon seed you ingest for the rest of your life will immediately begin growing into a watermelon in your stomach!",
+                "You are now 95% water, instead of the usual 70% (good luck).",
+                "Your pupils are now watermelon seeds! HAHAHAHAHHAA",
+                "It's time to pay the seed tax to the Melon Lord! Pay up.",
+                "You suddenly feel.. squishy. Your body has turned to melon MUSH.. you only have a few hours to live.",
+                "You suddenly feel.. crunchy. Watch out! Someone has bitten into your melon skin! T-minus three hours to live.",
+                "Oh no.. you've eaten TOO MUCH MELON!! Contact Melon Lord immediately."
+            ]
+        ];
+
         function spinAni() {
             document.getElementById('spinner').className = 'spin';
         }
@@ -22,6 +56,9 @@
             if(!aniRunning) {
                 aniRunning = true;
 
+                // Play anticipation sound
+                anticipationSound.play();
+
                 // Immediately fade out fortune text if there is any from previous fortune
                 document.getElementById('fortunetext').className = 'fade-out-text';
 
@@ -30,35 +67,10 @@
                     document.getElementById("fortunetext").innerHTML = "<br>"
                 }, 900);
 
-                // Choose random fortune among an array of fortunes
-                let fortunes = [
-                    "You are instantly hydrated! I wonder how long it'll last..",
-                    "Sending 372 watermelons to your front door.. ETA: 1.5 hours.",
-                    "You spun it too fast! Now the watermelon juice is EVERYWHERE :(",
-                    "You've been cursed (or blessed?)! Any watermelon seed you ingest for the rest of your life will immediately begin growing into a watermelon in your stomach!",
-                    "Yummmmmmmmmmmm",
-                    "Your new profession is now watermelon farmer (no takes backseys).",
-                    "Your head is now a watermelon.",
-                    "You are now 95% water, instead of the usual 70% (good luck).",
-                    "You are hydrated for life!",
-                    "You suddenly feel.. durable. Your skin is now made of watermelon rind!",
-                    "Melon melon melon melon melon melon",
-                    "Your biceps are now watermelons! Epic melon rizz.",
-                    "It's raining melon seeds!",
-                    "Ayo- can I be the water to your melon? :)",
-                    "Your pupils are now watermelon seeds! HAHAHAHAHHAA",
-                    "It's time to pay the seed tax to the Melon Lord! Pay up.",
-                    "You have transformed into a watermelon! Now sacrifice yourself to the Melon Lord!! MUAHAHAHAHA",
-                    "All hail the Melon Lord.",
-                    "You suddenly feel.. squishy. Your body has turned to melon MUSH.. you only have a few hours to live.",
-                    "You suddenly feel.. crunchy. Watch out! Someone has bitten into your melon skin! Minus three hours to live.",
-                    "You find the perfect watermelon on the ground.. you take a bite and get that good CRUNCH. Your life is now complete.",
-                    "Your time is up.. the Melon Lord is calling.",
-                    "Oh no.. you've eaten TOO MUCH MELON!! Your gums are becoming melon mush, your teeth are melon seeds.. and your lips are melon rind D: Contact Melon Lord immediately."
-                ];
-                let fortuneNum = Math.floor(Math.random() * fortunes.length);
+                let fortuneFate = Math.floor(Math.random() * 2);    // Choose whether the fortune will be bad (1) or good (0)
+                let fortuneNum = Math.floor(Math.random() * fortunes[fortuneFate].length);
 
-                let fortune = fortunes[fortuneNum];
+                let fortune = fortunes[fortuneFate][fortuneNum];
                 let title = document.getElementById('title').innerHTML;
 
                 // Begin spin animation and add an "o" to the title
@@ -67,6 +79,11 @@
 
                 // Fade in fortune text after 2s
                 setTimeout(() => {
+                    if(fortuneFate === 0) {
+                        goodFortuneSound.play();
+                    } else {
+                        badFortuneSound.play();
+                    }
                     document.getElementById("fortunetext").className = "fade-in-text"
                     document.getElementById("fortunetext").innerHTML = fortune
                 }, 2000);
