@@ -7,6 +7,10 @@
     <meta name="Description" content="Home page for melon mall">
     <title>Melon Mall</title>
     <script>
+        /*
+         * Variables
+         */ 
+
         let aniRunning = false;
         let titleRunning = false;
 
@@ -14,6 +18,7 @@
         let badFortuneSound = new Audio("audio/awww.mp3");
         let anticipationSound = new Audio("audio/woooaaa.mp3");
 
+        // Fortunes that show after the spinner is clicked
         let fortunes = [
             [
                 "You are instantly hydrated! I wonder how long it'll last..",
@@ -43,6 +48,10 @@
                 "Oh no.. you've eaten TOO MUCH MELON!! Contact Melon Lord immediately."
             ]
         ];
+
+        /*
+         * Functions
+         */ 
 
         function spinAni() {
             document.getElementById('spinner').className = 'spin';
