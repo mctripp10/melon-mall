@@ -5,7 +5,7 @@ with HTML, CSS, and JavaScript.
 
 ## Features
 
-### Learn! 📑
+### Learn! 📖
 ![melon-mall-home](./images/melon-mall-home.png)
 
 ### Eat! 😋
