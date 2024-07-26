@@ -1,6 +1,6 @@
 # Melon Mall Website 🍉
 
-A "for fun" website dedicated to the celebration of melons and all they have to offers. Built
+A "for fun" website dedicated to the celebration of melons and all they have to offer. Built
 with HTML, CSS, and JavaScript.
 
 ## Features
