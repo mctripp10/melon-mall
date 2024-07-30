@@ -8,15 +8,14 @@ with HTML, CSS, and JavaScript.
 ### Learn! 📖
 ![melon-mall-home](./images/melon-mall-home.png)
 
-### Eat! 😋
+### Eat delicious melons! 😋
 ![melon-eating](./images/melon-eating.gif)
 
-### Get Your Melon Fortune! If You Dare.. 🥠
+### Get your melon fortune! If you dare.. 🥠
 ![melon-eating](./images/melon-spinner.gif)
 
-### And Most Of All, Thank the Melon Lord! 🪨
+### And Most of All, Thank the Melon Lord! 🪨
 ![melon-lord-toph](./images/melonlord.gif)
-
 
 ## How to Access
 
