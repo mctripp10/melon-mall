@@ -14,10 +14,10 @@ with HTML, CSS, and JavaScript.
 ### Get your melon fortune! If you dare.. 🥠
 ![melon-eating](./images/melon-spinner.gif)
 
-### And Most of All, Thank the Melon Lord! 🪨
+### And most of all, thank the Melon Lord! 🪨
 ![melon-lord-toph](./images/melonlord.gif)
 
-## How to Access
+## How to access
 
 1. Clone the repository:
    ```
