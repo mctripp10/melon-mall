@@ -17,7 +17,7 @@ with HTML, CSS, and JavaScript.
 ### And most of all, thank the Melon Lord! 🪨
 ![melon-lord-toph](./images/melonlord.gif)
 
-## How to access
+## How to access ⚙️
 
 1. Clone the repository:
    ```
